@@ -1,0 +1,142 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="token" content="" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="courier.css" />
+
+</head>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg p-3 mb-5  rounded">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+            
+            </ul>
+       
+          </div>
+        </div>
+      </nav>
+       <div class="container mt-5 shadow-sm p-3 mb-5 bg-body rounded border"> 
+      
+      <div class="row">
+        <div class="col-6">      
+        <form class="shadow-sm p-3 mb-5 bg-body rounded border " name="form" >
+          <h2>Quotation</h2>
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div class="form-group">
+                <label for="_deliveryAddressInput" class="form-label">Collection: Suburb/Town</label>
+                <input class="form-control" onchange="fetchAllSuburb()" name="_collectionTownInput" list="_collectionTown" id="_collectionTownInput" placeholder="Type to search..." required>
+                <datalist id="_collectionTown"></datalist>
+              </div>
+            </div>
+            <!--  col-md-6   -->
+            <div class="col-md-6 mt-3">
+              <div class="form-group">
+                <label for="_deliveryContactInput" class="form-label">Delivery: Suburb/Town</label>
+                <input class="form-control mb-3"  list="_deliveryTown" onchange="fetchDeliveryTownInput()"  name="_deliveryTownInput" id="_deliveryTownInput" placeholder="Type to search..."required>
+                <datalist id="_deliveryTown"></datalist>
+              </div>
+            </div>
+            <!--  col-md-6   -->
+          </div>
+          <div class="row">
+              
+            <div class="col-md-6 mt-3">
+              <div class="form-group">
+                <label for="RF_code">RF code</label>
+                <select
+                class="form-control"
+                id="SendingFrom"
+                name="pFranchisee"
+                required>
+                <option value="">Select location</option>
+                <option value="BFN">BFN Bloemfontein</option>
+                <option value="CPT">CPT Cape Town</option>
+                <option value="DUR">DUR Durban</option>
+                <option value="ELS">ELS East London</option>
+                <option value="GRJ">GRJ George</option>
+                <option value="JNB">JNB Johannesburg</option>
+                <option value="KDP">KDP Klerksdorp</option>
+                <option value="NLP">NLP Nelspruit</option>
+                <option value="HRS">HRS Newcastle</option>
+                <option value="PZB">PLB Pietermaritzburg</option>
+                <option value="PTG">PTG Polokwane</option>
+                <option value="PLZ">PLZ Port Elizabeth</option>
+                <option value="PRY">PRY Pretoria</option>
+                <option value="RBG">RBG Rustenburg</option>
+                <option value="VEE">VEE Vereeniging</option>
+                <option value="WIT">WIT Witbank</option>
+              </select>
+
+              </div>
+            </div>
+            <!--  col-md-6   -->
+            <div class="col-md-6 mt-3">
+              <div class="form-group">
+                <label for="Suburb">Suburb</label>
+                <input type="text" class="form-control" placeholder="Suburb" id="Suburb"  name="vTown"
+                required>
+              </div>
+            </div>
+            <!--  col-md-6   -->
+         
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div class="form-group">
+                <label for="Postal_Code">Postal Code</label>
+                <input type="text" class="form-control"  name="vPostcode" placeholder="please enter  destination postal code" id="Postal_Code" required>
+              </div>
+            </div>
+            <!--  col-md-6   -->
+            <div class="col-md-6 mt-3">
+              <div class="form-group">
+                <label for="Weight">Weight in KG</label>
+                <input type="text" name="vWeight" class="form-control" id="Weight" placeholder=" please enter weight in KG" required>
+              </div>
+            </div>
+            <!--  col-md-6   -->
+          </div>
+          <!--  row   -->
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div class="form-group">
+                <label for="Height">Height in Cm</label>
+                <input type="height" class="form-control" id="height" placeholder=" please enter Height in Cm" required>
+              </div>
+            </div>
+            <div class="col-md-6 mt-3">
+              <div class="form-group">
+                <label for="width">Width In Cm</label>
+                <input type="text" class="form-control" id="width" placeholder=" please enter width in cm" required>
+              </div>
+            </div>
+          </div>
+        <div class="container-fluid">
+        <div class="container-fluid">
+         <button class="btn btn-primary mt-5 shadow-lg p-3 mb-1  rounded ">Submit</button>
+      </div></div></div></form></div>
+        <div class="col-3"><div id="myData"></div>   
+      </div>
+      <div class="col-3">
+      <div id="fastway"></div>
+    </div>
+       
+       </div></div>
+
+          <script src="api_request.js" ></script>
+</body>
+</html>
